@@ -18,10 +18,12 @@ for iter = 1:num_iters
     %
 
 
+    % simple algorithm to verify - hypothesis
+    h = X * theta; % X consists of all input, theta are weights
 
-
-
-
+    % update theta in each iteration (alpha is a single step)
+    % X' * (h - y) = sum((h - y) .* X)'
+    theta -= alpha * (1 / m) * (X' * (h - y));
 
     % ============================================================
 

@@ -24,16 +24,22 @@ sigma = zeros(1, size(X, 2));
 %               each feature. 
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
-%       
+%
 
+% number of columns 
+n = size(X_norm, 2);
 
+for i = 1:n
 
+  deviation = std(X(:, i));
+  mean_value = mean(X(:, i));
 
+  X_norm(:, i) = (X_norm(:, i) - mean_value) / deviation;
 
+  mu(i) = mean_value;
+  sigma(i) = deviation;
 
-
-
-
+end
 % ============================================================
 
 end

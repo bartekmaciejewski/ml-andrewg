@@ -13,8 +13,14 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
+% hypothesis
+h = X * theta;
 
+% calculus
+error_square = (h - y) .^ 2;
 
+% multi feature
+J = sum(error_square) / (2 * m);
 
 
 % =========================================================================
